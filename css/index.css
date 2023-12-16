@@ -1,0 +1,93 @@
+* {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: #FFF;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000915;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.button {
+  border-radius: 30px;
+  background: #9C0332;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 400;
+  padding: 13.3px 74px;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.h1 {
+  font-size: 3.5556em;
+}
+
+.top {
+  height: 1024px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) -7.35%, #000915 100%), url("../img/topbg.jpg"), lightgray 50%/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.top__content {
+  padding-top: 217px;
+}
+.top__title {
+  width: 788px;
+}
+.top__text {
+  padding-top: 32px;
+  width: 481px;
+}
+.top__button {
+  margin-top: 44px;
+}
+
+.game-container {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.game-card {
+  width: 378px;
+  height: 300px;
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+}
+.game-card__name {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  font-size: 1.3333em;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+.game-card_1 {
+  background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url("../img/game1.jpg"), lightgray 50%/cover no-repeat;
+}
+.game-card_2 {
+  background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url("../img/game2.jpg"), lightgray 50%/cover no-repeat;
+}
+.game-card_3 {
+  background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url("../img/game3.jpg"), lightgray 50%/cover no-repeat;
+}/*# sourceMappingURL=index.css.map */

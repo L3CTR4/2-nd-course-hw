@@ -1,0 +1,37 @@
+* {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: #FFF;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+  background: #000915;
+}
+
+.center{
+  padding-left: calc(50% - 1200px / 2);
+  padding-right: calc(50% - 1200px / 2);
+}
+
+.button {
+  border-radius: 30px;
+  background: #9C0332;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 400;
+  padding: 13.3px 74px;
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.h1{
+  font-size: 3.5556em;
+}
