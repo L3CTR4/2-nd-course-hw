@@ -66,6 +66,10 @@ body {
   justify-content: space-between;
   flex-flow: row;
 
+  &_inverted {
+    flex-flow: row-reverse;
+  }
+
   &__info {
     display: flex;
     flex-flow: column;
