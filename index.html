@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css?v2" />
+    <link rel="stylesheet" href="css/index.css?v3" />
     <title>SkyPro 2 курс</title>
   </head>
 
@@ -43,11 +43,25 @@
           <img src="./img/undraw_video_game.svg" alt="Геймпад" srcset="" />
         </picture>
       </div>
+
+      <div class="play play_inverted">
+        <div class="play__info">
+          <h2 class="h2 play__title">Игра в загадки</h2>
+          <p class="play__text">При нажатии на кнопку играть, вы увидите несколько слов, которые вам необходимо запомнить.</p>
+          <button class="button" id="guess-fruts">Играть</button>
+        </div>
+        <picture class="play__banner">
+          <img src="./img/undraw_gaming_re_cma21.svg" alt="Геймпад" srcset="" />
+        </picture>
+      </div>
     </main>
 
     <footer></footer>
   </body>
   <script>
+    document.getElementById(`seasons`).addEventListener(`click`, seasons);
+    document.getElementById(`guess-fruts`).addEventListener(`click`, guessFruts);
+    
     function seasons() {
       let monthNumber = prompt(`Введите номер месяца`);
       monthNumber = parseInt(monthNumber);
@@ -65,6 +79,42 @@
       }
     }
 
-    document.getElementById(`seasons`).addEventListener(`click`, seasons);
+    
+    function guessFruts() {
+      let fruits = ["Яблоко", "Груша", "Дыня", "Виноград", "Персик", "Апельсин", "Мандарин"];
+      let answerCount = 0;
+
+      fruits = fruits.sort(() => Math.random() - 0.4);
+
+      alert(`На экране будет возникнут слова, которые нужно запомнить и затем вписать их через запятую. Готов? Поехали!`);
+
+      alert(`${fruits.join(", ")}`);
+
+      let userAnswer = prompt("Повтори слова через запятую:") ?? "";
+
+      userAnswer = userAnswer.split(",");
+      userAnswer = userAnswer.map((item) => item.trim().toLowerCase());
+      fruits = fruits.map((item) => item.trim().toLowerCase());
+      let bufferAnswer = [];
+
+      for (let item of userAnswer) {
+        if (fruits.includes(item) && !bufferAnswer.includes(item)) {
+          answerCount += 1;
+          bufferAnswer.push(item);
+        }
+      }
+
+      let result = Math.round((answerCount / fruits.length) * 100);
+
+      if (result > 0 && result <= 40) {
+        alert(`Вы отгадали ${answerCount} из ${fruits.length}! В следующий раз повезёт!`);
+      } else if (result < 100) {
+        alert(`Вы отгадали ${answerCount} из ${fruits.length}! Очень близко, очень близко!`);
+      } else if (result <= 100) {
+        alert(`Вы отгадали ${answerCount} из ${fruits.length}! Поздравляю!`);
+      } else {
+        alert(`Вы ничего не отгадали... Попробуйте ещё раз!`);
+      }
+    }
   </script>
 </html>
