@@ -19,11 +19,17 @@ function isPositive(element) {
   else return false;
 }
 function isMale(element) {
-  if (element.gender === "male") return true;
-  else return false;
+  return element.gender === "male";
 }
 function filter(array, filterRule) {
-  return array.filter((element) => filterRule(element));
+  let result = [];
+  const length = array.length;
+  for(let i = 0; i < length; i++){
+    if(filterRule(array[i])){
+      result.push(array[i]);
+    }
+  }
+  return result;
 }
 
 let array = [3, -4, 1, 9];
@@ -61,7 +67,7 @@ delayForSecond(() => {
 // 5
 // Функция delayForSecond через 1 секунду пишет в консоль
 // «Прошла одна секунда», а затем вызывает переданный колбэк
-function delayForSecond(cb) {
+function delayForSecondWithInfo(cb) {
   setTimeout(() => {
     console.log("Прошла одна секунда");
     if (cb) {
@@ -78,6 +84,6 @@ function sayHi(name) {
 // Код выше менять нельзя
 
 // Нужно изменить код ниже:
-delayForSecond(() => {
+delayForSecondWithInfo(() => {
   sayHi("Глеб");
 });
